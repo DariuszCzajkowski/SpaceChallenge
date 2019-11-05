@@ -4,26 +4,28 @@ public class Rocket implements SpaceShip {
 
 
     @Override
-    public boolean launch() {
+    public  boolean launch() {
 
 
-        return false;
+        return true;
     }
 
     @Override
     public boolean land() {
-        return false;
+        return true;
     }
 
-
-    public boolean canCarry() {
-
-
+    @Override
+    public boolean canCarry(Item item) {
         return false;
     }
 
     @Override
-    public int carry() {
+    public int carry(Item item) {
+
+
         return 0;
     }
+
+
 }
