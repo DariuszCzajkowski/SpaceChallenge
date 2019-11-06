@@ -2,13 +2,10 @@ package com;
 
 public class Rocket implements SpaceShip {
 
-
+    int currentWeight;
+    int maxWeight;
     @Override
-    public  boolean launch() {
-
-
-        return true;
-    }
+    public  boolean launch() { return true;   }
 
     @Override
     public boolean land() {
@@ -17,14 +14,14 @@ public class Rocket implements SpaceShip {
 
     @Override
     public boolean canCarry(Item item) {
-        return false;
-    }
+
+     return  (currentWeight+item.weight)<=maxWeight;}
 
     @Override
     public int carry(Item item) {
+         currentWeight=currentWeight+item.weight;
 
-
-        return 0;
+        return currentWeight;
     }
 
 
