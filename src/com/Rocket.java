@@ -2,8 +2,9 @@ package com;
 
 public class Rocket implements SpaceShip {
 
+    int rocketCost;
     int currentWeight;
-    int maxWeight;
+    double cargoLimit;
     @Override
     public  boolean launch() { return true;   }
 
@@ -12,10 +13,7 @@ public class Rocket implements SpaceShip {
         return true;
     }
 
-    @Override
-    public boolean canCarry(Item item) {
 
-     return  (currentWeight+item.weight)<=maxWeight;}
 
     @Override
     public int carry(Item item) {
@@ -23,6 +21,9 @@ public class Rocket implements SpaceShip {
 
         return currentWeight;
     }
+    @Override
+    public boolean canCarry(Item item) {
 
+        return  (currentWeight+item.weight)<=cargoLimit;
 
-}
+}}
