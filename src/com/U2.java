@@ -9,23 +9,27 @@ public class U2 extends Rocket {
         // chance of explode landing   1% * (cargo carried / cargo limit)
     }
 
-    private double randomNumber= Math.random();
-    double launchChance=4*(currentWeight / cargoLimit);
-    double landChance=8*(currentWeight / cargoLimit);
+    private double numberRandom (){
+
+        double randomNumber= Math.random()*100;
+    return randomNumber;
+    }
+
 
 
 
 
         @Override
     public   boolean launch() {
-
-        return launchChance >= randomNumber;
+            double launchChance=(currentWeight / cargoLimit)*4;
+        return launchChance <= numberRandom();
 
     }
 
     @Override
-    public boolean land() {
-        return landChance >= randomNumber;
+    public boolean land() {  double landChance= (currentWeight / cargoLimit)*8;
+
+        return landChance <= numberRandom();
     }
 }
 

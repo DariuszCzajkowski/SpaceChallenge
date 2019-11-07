@@ -109,7 +109,7 @@ public class Simulation {
             // if the rocket crashes when it launches or when it lands, send rocket again
             if (!aRocket.launch()){
                 budget = budget + aRocket.rocketCost;
-                System.out.println("Rocket explode in launched " + index +  "\n Current budget is: " + budget
+                System.out.println("launch fail, Rocket " + index + " explode"+ "\n Current budget is: " + budget
                         + " Relaunching rocket.");
                 aRocket.launch();
             }else if (!aRocket.land()){
@@ -123,7 +123,7 @@ public class Simulation {
 
         }
 
-        System.out.println("Total project budget = " + budget);
+        System.out.println("Total project budget = " + budget+"\n");
         return budget;
     }
 
